@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Sign Up</h1>
+                    <h6>Register Yourself !</h6>
+                </div>
+                <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Nome</label>
+                        <input formControlName="nome" type="text" class="form-control" id="exampleInputPassword1">
+                        <span class="text-danger" *ngIf="signupForm.controls['nome'].dirty && signupForm.hasError('required','nome')">*Nome is required</span>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                        <input formControlName="email"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <span class="text-danger" *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required','email')">*Email is required</span>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input formControlName="password"  type="password" class="form-control" id="exampleInputPassword1">
+                        <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required','password')">*Password is required</span>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Morada</label>
+                        <input formControlName="morada" type="text" class="form-control" id="exampleInputPassword1">
+                        <span class="text-danger" *ngIf="signupForm.controls['morada'].dirty && signupForm.hasError('required','morada')">*Morada is required</span>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Código Postal</label>
+                        <input formControlName="codigo_postal"  type="text" class="form-control" id="exampleInputPassword1">
+                        <span class="text-danger" *ngIf="signupForm.controls['codigo_postal'].dirty && signupForm.hasError('required','codigo_postal')">*Password is required</span>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">País</label>
+                        <input formControlName="pais" type="text" class="form-control" id="exampleInputPassword1">
+                        <span class="text-danger" *ngIf="signupForm.controls['pais'].dirty && signupForm.hasError('required','pais')">*Password is required</span>
+                      </div>
+                 
+                    <button  [disabled]="!signupForm.valid" type="submit" class="btn btn-primary">Sign up</button>
+                  </form>
+                  <a style="color: white" routerLink="/login">Already registed? Click here to Log in </a>
+            </div>
+        </div>
+    </div>
+</div>
+

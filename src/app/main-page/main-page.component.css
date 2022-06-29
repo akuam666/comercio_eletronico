@@ -1,0 +1,16 @@
+h1{
+    position:absolute;
+     top:40%; 
+      text-align:center;  
+    color: white;
+    left: 40%;
+    font-size: 80px;
+    font-weight: bold;
+    letter-spacing: 5PX;
+    
+    
+    
+}
+.container{
+    position: relative;
+}

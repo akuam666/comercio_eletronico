@@ -1,0 +1,11 @@
+
+            <div class="card text-center">
+                <img [src]="produto.foto_principal" routerLink="/produtos/{{produto.id}}" class="card-img-top" alt="...">
+                <div class="card-body" >
+                  <h5 class="card-title">{{produto.nome}}
+                    <fa-icon *ngIf="addedToWishlist" [icon]="['fas', 'star']" style = "color:red;" (click)="removeProdutoWishlist(produto.id!)"></fa-icon>
+                    <fa-icon *ngIf="!addedToWishlist" [icon]="['far', 'star']" (click)="addProdutoWhishlist(produto.id!)"></fa-icon>                    
+                  </h5>
+                  <p class="card-text">{{produto.marca}} {{addedToWishlist}}</p>
+                </div>
+              </div> 
