@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
 }
 
 signUp(){
-  this.http.post<any>("http://localhost:3000/signupUsers", this.signupForm.value)
+  this.http.post<any>("http://localhost:3000/signupsers", this.signupForm.value)
   .subscribe(res=>{
     alert("Signup Successfull!");
     this.signupForm.reset();

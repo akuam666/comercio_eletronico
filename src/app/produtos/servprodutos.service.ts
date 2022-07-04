@@ -16,6 +16,8 @@ export class ServprodutosService {
 
   private urlAPI="http://localhost:3000/produtos";
 
+ 
+
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   private processaErro(erro: HttpErrorResponse) {
@@ -89,6 +91,8 @@ export class ServprodutosService {
     // a REST API retorna o registo inserido juntamente com a chave
     return this.http.put<Produto>(`${this.urlAPI}/${id}`, infoProduto);
   }
+
+
 
 
 

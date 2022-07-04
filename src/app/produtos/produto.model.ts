@@ -8,4 +8,5 @@ export type Produto = {
     descricao: string,
     foto_principal: string,
     foto_secundária: string;
+    wish: string [];
 }

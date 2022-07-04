@@ -4,4 +4,18 @@
    <p><label for="pesquisa">Casaco:</label> <button type="text" id="pesquisa" 
     (click)="processa_pesquisa('')" ></button>
    </p>
-   
+
+   <form>
+
+    <div class="form-group row">
+        <div class="col-sm-2">Checkbox</div>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck1" (click)="processa_pesquisa('Calças')">
+            <label class="form-check-label" for="gridCheck1">
+              Example checkbox
+            </label>
+          </div>
+        </div>
+      </div>
+   </form>

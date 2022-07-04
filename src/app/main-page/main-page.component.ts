@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
+import { StoreService } from '../store.service';
+import { User } from '../user.model';
 
 @Component({
   selector: 'app-main-page',
@@ -11,9 +13,21 @@ import { CarouselConfig } from 'ngx-bootstrap/carousel';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  userLogado! : User;
+
+  constructor(private storeService: StoreService) { }
 
   ngOnInit(): void {
+    this.mostraUser();
+    
   }
+
+  mostraUser(){
+
+    this.userLogado = this.storeService.getUser();
+    console.log(this.userLogado);
+    console.log("valor de cime é o user logado")
+  }
+
 
 }

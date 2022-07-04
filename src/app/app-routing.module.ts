@@ -5,6 +5,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ProdutoComponent } from './produtos/produto/produto.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { SignupComponent } from './signup/signup.component';
+import { UserpageComponent } from './userpage/userpage.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
  {path: 'produtos/:id', component: ProdutoComponent},
  {path: 'login', component:LoginComponent },
  {path: 'signup', component:SignupComponent},
- {path: 'wishlist', component:WishlistComponent}
+ {path: 'wish', component:WishlistComponent},
+ {path: 'user' , component:UserpageComponent}
 
 
 

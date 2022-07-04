@@ -22,6 +22,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductItemComponent } from './produtos/product-item/product-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterComponent } from './produtos/filter/filter.component';
+import { UserpageComponent } from './userpage/userpage.component';
 
 
 
@@ -42,6 +43,7 @@ import { FilterComponent } from './produtos/filter/filter.component';
     WishlistComponent,
     ProductItemComponent,
     FilterComponent,
+    UserpageComponent,
  
   
     
