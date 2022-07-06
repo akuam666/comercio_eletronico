@@ -17,12 +17,12 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
 
       this.signupForm = this.formBuilder.group({
-        nome:['', Validators.required],
+        nome:['', [Validators.required, Validators.pattern('[a-zA-Z ]{3,40}')]],
         email:['', Validators.required],
         password:['', Validators.required],
-        morada:['', Validators.required],
-        codigo_postal:['', Validators.required],
-        pais:['', Validators.required],
+        morada:['', [Validators.required, Validators.pattern('[a-zA-Z0-9 -]{3,40}')]],
+        codigo_postal:['', [Validators.required, Validators.pattern('[a-zA-Z0-9 -]{3,30}')]],
+        pais:['', [Validators.required, Validators.pattern('[a-zA-Z ]{3,20}')]],
 
 
   });

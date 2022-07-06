@@ -5,7 +5,7 @@
 
 <h1>Homem</h1>
   <div class="row row-cols-1 row-cols-md-3 g-4" >
-    <app-filter (valorPesquisa)="filtraLista($event)"></app-filter>
+    <app-filter (valorTipo)="filtraLista($event)"  ></app-filter>
     
     <div class="col"  *ngFor="let produto of listaProdutos">
       <app-product-item [produto]="produto" [addedToWishlist]="wishlist.indexOf(produto.id!) >=0"></app-product-item>

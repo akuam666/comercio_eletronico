@@ -8,7 +8,7 @@
     left: 50%;
     color: white;
     transform: translate(-50%, -50%);
-    background: hsla(205, 46%, 30%, 1);
-    background: linear-gradient(90deg, rgb(34, 40, 44) 0%, rgb(38, 25, 65) 100%);
+    background: rgb(108, 119, 128);
+    
 
 }

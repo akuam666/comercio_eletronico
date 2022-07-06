@@ -7,6 +7,7 @@ import { ProdutosComponent } from './produtos/produtos.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { AdminpageComponent } from './adminpage/adminpage.component';
 
 const routes: Routes = [
   //{path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -17,7 +18,8 @@ const routes: Routes = [
  {path: 'login', component:LoginComponent },
  {path: 'signup', component:SignupComponent},
  {path: 'wish', component:WishlistComponent},
- {path: 'user' , component:UserpageComponent}
+ {path: 'user' , component:UserpageComponent},
+ {path: 'adminpage' , component:AdminpageComponent}
 
 
 

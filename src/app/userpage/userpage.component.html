@@ -3,47 +3,62 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="text-center">
-                    <h1>Change personal info</h1>
+                    <h1>Dados pessoais</h1>
                     
                 </div>
                 <form [formGroup]="signupForm" >
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Nome</label>
-                        <input formControlName="nome" type="text" class="form-control" id="exampleInputPassword1">
-                        <span class="text-danger" *ngIf="signupForm.controls['nome'].dirty && signupForm.hasError('required','nome')">*Nome is required</span>
+                        <label for="nome" class="form-label">Nome</label>
+                        <input formControlName="nome" type="text" class="form-control" id="nome">
+                        <small *ngIf="signupForm.get('nome')!.touched && signupForm.get('nome')!.invalid">
+                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                      </small>
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email</label>
                         <input formControlName="email"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        <span class="text-danger" *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required','email')">*Email is required</span>
+                        <small *ngIf="signupForm.get('email')!.touched && signupForm.get('email')!.invalid">
+                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                      </small>
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
                         <input formControlName="password"  type="password" class="form-control" id="exampleInputPassword1">
-                        <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required','password')">*Password is required</span>
+                        <small *ngIf="signupForm.get('email')!.touched && signupForm.get('email')!.invalid">
+                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                      </small>
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Morada</label>
                         <input formControlName="morada" type="text" class="form-control" id="exampleInputPassword1">
-                        <span class="text-danger" *ngIf="signupForm.controls['morada'].dirty && signupForm.hasError('required','morada')">*Morada is required</span>
+                        <small *ngIf="signupForm.get('morada')!.touched && signupForm.get('morada')!.invalid">
+                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                      </small>
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Código Postal</label>
                         <input formControlName="codigo_postal"  type="text" class="form-control" id="exampleInputPassword1">
-                        <span class="text-danger" *ngIf="signupForm.controls['codigo_postal'].dirty && signupForm.hasError('required','codigo_postal')">*Password is required</span>
+                        <small *ngIf="signupForm.get('codigo_postal')!.touched && signupForm.get('codigo_postal')!.invalid">
+                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                      </small>
                       </div>
                       <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">País</label>
                         <input formControlName="pais" type="text" class="form-control" id="exampleInputPassword1">
-                        <span class="text-danger" *ngIf="signupForm.controls['pais'].dirty && signupForm.hasError('required','pais')">*Password is required</span>
+                        <small *ngIf="signupForm.get('pais')!.touched && signupForm.get('pais')!.invalid">
+                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                      </small>
                       </div>
                  
-                    <button  [disabled]="!signupForm.valid" type="submit" class="btn btn-primary" (click)="alteraUser()">Save</button>
+                    <input  [disabled]="!signupForm.valid" type="button" class="btn btn-dark" (click)="alteraUser()" value="Guardar alterações">
                   </form>
  
             </div>
         </div>
     </div>
 </div>
+
+
+
 

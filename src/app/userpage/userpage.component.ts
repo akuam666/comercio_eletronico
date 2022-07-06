@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder,Validators } from '@angular/forms';
+import { FormGroup, FormBuilder,Validators, FormControl } from '@angular/forms';
 
 import { StoreService } from '../store.service';
 import { User } from '../user.model';
@@ -27,13 +27,16 @@ export class UserpageComponent implements OnInit {
   ngOnInit(): void {
 
 
-    this.signupForm = this.formBuilder.group({
-      nome:['', Validators.required],
-      email:['', Validators.required],
-      password:['', Validators.required],
-      morada:['', Validators.required],
-      codigo_postal:['', Validators.required],
-      pais:['', Validators.required],
+    
+
+
+    this.signupForm = new FormGroup({
+      nome: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z -]{3,40}')]),
+      email:new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z -]{3,40}')]),
+      password: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]{3,40}')]),
+      morada:new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z -]{3,40}')]),
+      codigo_postal:new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z -]{3,40}')]),
+      pais:new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z -]{3,40}')]),
     });
 
 
@@ -51,9 +54,6 @@ export class UserpageComponent implements OnInit {
 
 
    })
-
-
-
   }
 
   alteraUser(){

@@ -23,6 +23,7 @@ import { ProductItemComponent } from './produtos/product-item/product-item.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterComponent } from './produtos/filter/filter.component';
 import { UserpageComponent } from './userpage/userpage.component';
+import { AdminpageComponent } from './adminpage/adminpage.component';
 
 
 
@@ -44,6 +45,7 @@ import { UserpageComponent } from './userpage/userpage.component';
     ProductItemComponent,
     FilterComponent,
     UserpageComponent,
+    AdminpageComponent,
  
   
     

@@ -67,14 +67,14 @@ export class ServprodutosService {
    }
    
 
-  filtraProduto(filtro: string) {
-    return this.http.get<Produto[]>(`${this.urlAPI}?tipo_de_produto_like=${filtro}`);
+  filtraProduto(filtroTipo: string, filtroCor :string) {
+    return this.http.get<Produto[]>(`${this.urlAPI}?tipo_de_produto_like=${filtroTipo}&cor_like=${filtroCor}`);
   }
 
 
   
 
-  postLivro(infoProduto : Produto) {
+  postProduto(infoProduto : Produto) {
     // a REST API retorna o registo inserido juntamente com a chave (id)
     return this.http.post<Produto>(this.urlAPI, infoProduto);
   }

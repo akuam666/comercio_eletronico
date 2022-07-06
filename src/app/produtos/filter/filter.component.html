@@ -1,21 +1,43 @@
-<p><label for="pesquisa">Calças:</label> <button type="text" id="pesquisa" 
-    (click)="processa_pesquisa('Calças')" ></button>
-   </p>
-   <p><label for="pesquisa">Casaco:</label> <button type="text" id="pesquisa" 
-    (click)="processa_pesquisa('')" ></button>
-   </p>
 
-   <form>
 
-    <div class="form-group row">
-        <div class="col-sm-2">Checkbox</div>
-        <div class="col-sm-10">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck1" (click)="processa_pesquisa('Calças')">
-            <label class="form-check-label" for="gridCheck1">
-              Example checkbox
-            </label>
-          </div>
-        </div>
-      </div>
-   </form>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="1" (change)="onChange($event)">
+      <label class="form-check-label" for="inlineRadio2">Todos</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Calças" (change)="onChange($event)">
+      <label class="form-check-label" for="inlineRadio1">Calças</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Casaco" (change)="onChange($event)">
+      <label class="form-check-label" for="inlineRadio2">Casaco</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Camisa" (change)="onChange($event)">
+      <label class="form-check-label" for="inlineRadio2">Camisa</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="T-Shirt" (change)="onChange($event)">
+      <label class="form-check-label" for="inlineRadio2">T-Shirt</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Sweatshirt" (change)="onChange($event)">
+      <label class="form-check-label" for="inlineRadio2">Sweatshirt</label>
+    </div>
+    
+
+<div>
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="Preto" (change)="onChange($event)">
+    <label class="form-check-label" for="inlineRadio2">Preto</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="2" (change)="onChange($event)">
+    <label class="form-check-label" for="inlineRadio2">Todos</label>
+  </div>
+</div>
+
+   
+
+  

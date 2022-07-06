@@ -61,9 +61,12 @@ export class ProdutosComponent implements OnInit {
     )
   }
 
-  filtraLista(pesquisa : string) {
+  filtraLista(pesquisaTipo : string[]) {
+    let one = pesquisaTipo[0];
+    let two = pesquisaTipo[1];
+    console.log(one, two);
 
-    this.servprodutos.filtraProduto(pesquisa).subscribe({
+    this.servprodutos.filtraProduto(one, two).subscribe({
       next: (produtos : Produto[]) => {        
          this.listaProdutos=produtos;    
       }

@@ -1,0 +1,123 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Adicionar produto</h1>
+                    
+                </div>
+                <form [formGroup]="formProdutos" >
+                    <div class="mb-3">
+                      <label for="nome" class="form-label">Produto:</label>
+                      <input class="form-control" type="text" class="form-control" id="nome" formControlName="nome">
+                          <small *ngIf="formProdutos.get('nome')!.touched && formProdutos.get('nome')!.invalid">
+                           Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                       </small>
+                      </div>
+                      <div class="mb-3">
+                        <label for="marca" class="form-label">Marca:</label>
+                        <input class="form-control" type="text" id="marca" formControlName="marca">             
+                          <small *ngIf="formProdutos.get('marca')!.touched && formProdutos.get('marca')!.invalid">
+                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                          </small>
+                      </div>
+                      <div class="mb-3">
+                        <label for="cor" class="form-label">Cor:</label> <input class="form-control" type="text" id="cor" formControlName="cor">
+  
+                        <small *ngIf="formProdutos.get('cor')!.touched && formProdutos.get('cor')!.invalid">
+                         Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 20 caracteres).
+                        </small>
+                      </div>
+                   
+                      <div class="mb-3">
+                        <label for="preco" class="form-label">Preço:</label> <input class="form-control" type="text" id="preco" formControlName="preco">
+                          <small *ngIf="formProdutos.get('preco')!.touched && formProdutos.get('preco')!.invalid">
+                            O preço máximo é 1000.
+                          </small>
+                      </div>
+                      <div class="mb-3">
+                        <label for="descricao" class="form-label">Descrição:</label> <input type="text" class="form-control" id="descricao" formControlName="descricao">
+  
+                        <small *ngIf="formProdutos.get('descricao')!.touched && formProdutos.get('descricao')!.invalid">
+                            Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 200 caracteres).
+                        </small>
+                      </div>
+                      <div class="mb-3">
+                        <label for="tipo_de_produto" class="form-label">Tipo:</label> <select id="tipo_de_produto" formControlName="tipo_de_produto">
+                          <option value="" selected>-- Seleccione um tipo --</option>
+                          <option value="Calças">Calças</option>
+                          <option value="Casaco">Casaco</option>
+                          
+                      </select>
+                      </div>
+                      <div class="mb-3">
+                        <div class="form-check form-switch">
+                          <input class="form-check-input"  type="checkbox" role="switch" id="destaque" formControlName="destaque">
+                          <label class="form-check-label" for="flexSwitchCheckDefault">Destaques</label>
+                        </div>
+                      </div>
+                 
+                      <p>
+  
+                        <input *ngIf="!emInsercao" type="button" class="btn btn-dark" (click)="cancelarAlteracao()" value="Cancelar alteração">
+                        <input *ngIf="!emInsercao" [disabled]="formProdutos.invalid" type="button" class="btn btn-dark" (click)="alteraProduto($event)" value="Alterar produto">
+                        <input *ngIf="emInsercao" [disabled]="formProdutos.invalid" type="button" (click)="inserirProduto()" class="btn btn-dark" value="Inserir produto">
+                    </p>
+                  </form>
+  
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  
+  
+
+<table id="tabelaDados">
+    <thead>
+        
+            <tr>
+                <td colspan="9">Total de produtos: {{ listaProdutos.length }}</td>
+            </tr>
+       
+        <tr>
+            <th>Foto</th>
+            <th>Marca</th>
+            <th>Produto</th>
+            <th>Tipo de produto</th>
+            <th>Cor</th>
+            <th>Preço</th>
+            <th>Descrição</th>
+            <th>Destaque</th>
+            <th>Operações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let produto of listaProdutos" >
+            <td><img [src]="produto.foto_principal"></td>
+            <td>{{ produto.marca }}</td>
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.tipo_de_produto }}</td>
+            <td>{{ produto.cor }}</td>
+            <td>{{ produto.preco }}</td>
+            <td>{{ produto.descricao }}</td>
+            <td>{{ produto.destaque }}</td>
+            <td>
+                <a href="javascript:void(0);" class="tabela_produto_icone" (click)="eliminaProduto(produto.id!,$event)">&#10005;</a>
+                <a href="javascript:void(0);" class="tabela_livro_icone" (click)="idaAlterar(produto.id!,$event)">&#9998;</a>
+                
+            </td>
+
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="9">Total de produtos: {{ listaProdutos.length }}</td>
+        </tr>
+    </tfoot>
+</table>
+
+
+

@@ -4,13 +4,13 @@
             <div class="card">
                 <div class="text-center">
                     <h1>Login</h1>
-                    <h6>Please enter email and password !</h6>
+                    <h6>Insira o seu email e passord!</h6>
                 </div>
                 <form [formGroup]="loginForm" (ngSubmit)="login()">
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
                       <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
+                      
                       <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">*Email is required</span>
                     </div>
                     <div class="mb-3">
@@ -19,9 +19,9 @@
                       <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*Password is required</span>
                     </div>
                  
-                    <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+                    <button type="submit" [disabled]="!loginForm.valid" class="btn btn-dark">Login</button>
                   </form>
-                  <a style="color: white" routerLink="/signup">New user? Click to signup!</a>
+                  <a style="color: white" routerLink="/signup">Ainda não está resgistado? Clik aqui!</a>
             </div>
         </div>
     </div>
