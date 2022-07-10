@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
+import { StoreService } from '../store.service';
+import { User } from '../user.model';
+import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHammer } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+
+
+
+
 
 
 @Component({
@@ -11,11 +22,25 @@ import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 
 export class HeaderComponent implements OnInit {
 
+  faClipboardList = faClipboardList;
+  faUser = faUser;
+  faSignOutAlt = faSignOutAlt;
+  faHammer=faHammer;
+  faSignInAlt = faSignInAlt;
 
+  constructor( private storeService: StoreService){}
 
-  constructor() { }
+  
+  isLogged : boolean= this.storeService.isAuthenticated();
+  dadosUser : User= this.storeService.getUser();
 
   ngOnInit(): void {
+
+  }
+
+
+  logOut(){
+    this.storeService.setisNotLoggedIn();
   }
 
 }

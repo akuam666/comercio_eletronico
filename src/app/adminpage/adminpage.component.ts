@@ -14,26 +14,25 @@ export class AdminpageComponent implements OnInit {
   listaProdutos: Produto[] = [];
   formProdutos! : FormGroup;
   emInsercao : boolean = true;
-  produtoAalterar! : Produto
+  produtoAalterar! : Produto;
+  listaTipos!:any[];
 
   constructor(private servprodutos: ServprodutosService, private store: StoreService) { }
 
   ngOnInit(): void {
 
     this.leProdutos();
+    this.leTipos();
     
     this.formProdutos = new FormGroup({
        nome: new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z -]{3,40}')]),
        marca: new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z -]{3,40}')]),
        tipo_de_produto: new FormControl(''),
        cor: new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z -]{3,20}')]),
-       preco: new FormControl('',[Validators.required, Validators.pattern('[0-9]{2,4}')]),
-       descricao: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z -]{3,200}')]),
-       destaque: new FormControl('false',),
+       preco: new FormControl('',[Validators.required, Validators.pattern('[0-9]{2,5}')]),
+       descricao: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z -.?!(),]{3,400}')]),
+       destaque: new FormControl('',),
      });
-
-
-
 
   }
 
@@ -66,8 +65,6 @@ export class AdminpageComponent implements OnInit {
   idaAlterar(id:number, evento:any){
     evento.stopPropagation();
     this.emInsercao=false
-    
-  ;
 
    this.servprodutos.getProduto(id).subscribe(
     (produto : Produto) => {   
@@ -94,6 +91,7 @@ export class AdminpageComponent implements OnInit {
 
 
   alteraProduto( evento : any){
+
     evento.stopPropagation();
     let infoProduto : Produto = this.formProdutos.value;
     if (confirm("Confirma a alteração do produto?")) {
@@ -110,7 +108,6 @@ export class AdminpageComponent implements OnInit {
         }
       });
     }
-
   }
 
 
@@ -124,14 +121,41 @@ export class AdminpageComponent implements OnInit {
         this.formProdutos.reset();
       }
     )
-
-    // this.store.setMensagem("Livro criado");
-
   }
 
   cancelarAlteracao() {
     this.formProdutos.reset();
     this.emInsercao=true;
   }
+
+  leTipos(){
+    this.servprodutos.getTipos().subscribe({
+      next: (tipos : any) => {        
+        this.listaTipos=tipos;    
+      }
+    });
+
+  }
+
+  processa_pesquisa(pesquisa : string){
+
+    this.servprodutos.filtraRoupa(pesquisa).subscribe({
+      next: (produtos : Produto[]) => {        
+        this.listaProdutos=produtos;    
+      }
+    }
+    )
+  }
+
+  limpa_pesquisa(){
+    this.servprodutos.getProdutos().subscribe({
+      next: (produtos : Produto[]) => {        
+        this.listaProdutos=produtos;    
+      }
+    });
+
+  }
+
+
 
 }

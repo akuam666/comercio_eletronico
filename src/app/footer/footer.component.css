@@ -1,6 +1,5 @@
 .flex-container {
-    padding: 0;
-    margin: 0;
+   
     list-style: none;
     display: flex;
   }
@@ -13,16 +12,34 @@
     color: black;
  }
  
+ .container{
+  background-color:#e4e4e4;
+ }
+
+ ul{
+padding-top: 30px;
+ }
+
+p{
+  padding-bottom: 30px;
+  text-align: center;
+}
   
+ /* .container{
+margin-top: 30px;
+margin-bottom: 30px;
+ } */
+
   .flex-item {
-    padding: 5px;
-    width: 40px;
-    height: 40px;
-    margin: 5px;
+    /* padding: 10px; */
+     width: 40px;
+    height: 40px; 
+    /* margin-top: 30px;
+    margin-bottom: 30px; */
     line-height: 50px;
     
-    font-weight: bold;
-    font-size: 2em;
+     /* font-weight: bold; */
+    font-size: 1em; 
     text-align: center;
     cursor: pointer;
   }

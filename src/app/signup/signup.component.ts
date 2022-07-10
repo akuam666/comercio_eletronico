@@ -18,12 +18,11 @@ export class SignupComponent implements OnInit {
 
       this.signupForm = this.formBuilder.group({
         nome:['', [Validators.required, Validators.pattern('[a-zA-Z ]{3,40}')]],
-        email:['', Validators.required],
+        email:['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
         password:['', Validators.required],
         morada:['', [Validators.required, Validators.pattern('[a-zA-Z0-9 -]{3,40}')]],
         codigo_postal:['', [Validators.required, Validators.pattern('[a-zA-Z0-9 -]{3,30}')]],
         pais:['', [Validators.required, Validators.pattern('[a-zA-Z ]{3,20}')]],
-
 
   });
 

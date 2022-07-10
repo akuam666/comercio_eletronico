@@ -1,0 +1,120 @@
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid d-flex">
+      
+          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>  -->
+         
+          
+          <div class=" navbar-collapse" id="navbarScroll">
+
+    
+            <ul id="nav" class="navbar-nav me-auto my-2 my-lg-0  d-flex mx-auto" style="--bs-scroll-height: 100px;"> 
+            
+              <li class="nav-item ">
+                  <div class="btn-group" dropdown>
+                    <a class="nav-link "  id="button" dropdownToggle type="button" >Homem</a>
+                   
+                    <ul id="dropdown" *dropdownMenu class="dropdown-menu"
+                        role="menu" aria-labelledby="button">
+                        <li role="menuitem"><a class="dropdown-item" href="#">Sapatos</a>
+                        </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Polos</a>
+                        </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Sweatshirt</a>
+                        </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Calças</a>
+                        </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Camisas</a></li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Casacos</a>
+                        </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#" routerLink="produtos" routerLinkActive="activa">Todos</a></li>
+                    </ul>
+                  </div>
+                  <span>|</span>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <div class="btn-group" dropdown>
+                      <a class="nav-link " href="#" id="button" dropdownToggle type="button" >Mulher</a> 
+                   
+                      <ul id="dropdown" *dropdownMenu class="dropdown-menu"
+                          role="menu" aria-labelledby="button">
+                        <li role="menuitem"><a class="dropdown-item" href="#">Vestidos</a></li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Blusões</a>
+                        </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Coletes</a></li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Jeans</a>
+                        </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Saias</a>
+                        </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Calções</a>
+                        </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Lingerie</a>
+                        </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Sapatos</a>
+                        </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Malas</a>
+                        </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Todos</a>
+                        </li>
+                      </ul>
+                    </div>
+                    </li> 
+                    
+                    <li id="brand-logo">
+                    <a href="http://localhost:4200/">
+
+                      <img src="../assets/Imagens/logo.png"  alt="logo" width="100" height="60">
+                    </a>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                      <div class="btn-group" dropdown>
+                        <a class="nav-link " href="#" id="button" dropdownToggle type="button" >Criança</a> 
+                     
+                        <ul id="dropdown" *dropdownMenu class="dropdown-menu"
+                            role="menu" aria-labelledby="button">
+                          <li role="menuitem"><a class="dropdown-item" href="#">Menina | 6-14 Anos</a></li>
+                          <li role="menuitem"><a class="dropdown-item" href="#">Menino | 6-14 Anos</a></li>
+                          <li role="menuitem"><a class="dropdown-item" href="#">Bebé Menina | 3 Meses - 5 Anos</a></li>
+                          <li role="menuitem"><a class="dropdown-item" href="#">Bebé Menino | 3 Meses - 5 Anos</a>
+                          </li>
+                          <li role="menuitem"><a class="dropdown-item" href="#">Mini | 0-12 Meses</a>
+                          </li>
+                    
+                        </ul>
+                      </div>
+                      <span>|</span>
+                      </li> 
+                      <li class="nav-item">
+                        <div class="btn-group" dropdown>
+                          <a class="nav-link " href="#" id="button" dropdownToggle type="button" >Acessórios</a> 
+                       
+                          <ul id="dropdown" *dropdownMenu class="dropdown-menu"
+                              role="menu" aria-labelledby="button">
+                            <li role="menuitem"><a class="dropdown-item" href="#">Malas</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="#">Pulseiras</a>
+                            </li>
+                            <li role="menuitem"><a class="dropdown-item" href="#">Anéis</a></li>                   
+                          </ul>
+                        </div>
+                        </li> 
+                      </ul>
+                      
+                     
+            <ul id="icons" class="flex-container d-flex " style="list-style: none;">
+           
+              <li class="flex-item"><a title="Login" routerLink="/login" style="cursor:pointer;" ><fa-icon [icon]="faSignInAlt" ></fa-icon></a></li> 
+              <li class="flex-item"><a title="Logout" routerLink="" style="cursor:pointer;" (click)="logOut()"><fa-icon [icon]="faSignOutAlt" ></fa-icon></a></li>
+              <li class="flex-item"><a title="Userpage" routerLink="/user" style="cursor:pointer;" ><fa-icon [icon]="faUser" ></fa-icon></a></li>
+              <li class="flex-item"><a title="Wishlist" routerLink="/wish" style="cursor:pointer;" ><fa-icon [icon]="faClipboardList" ></fa-icon></a></li>
+              <li class="flex-item"><a title="Admin" routerLink="/adminpage" style="cursor:pointer;" ><fa-icon [icon]="faHammer" ></fa-icon></a></li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>

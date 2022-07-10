@@ -27,26 +27,25 @@ export class WishlistComponent implements OnInit {
 
  
   leProdutos() {
+    this.wishlistService.getWishlist().subscribe(a=>{
+      // console.log(productIds)
+     this.wishlist= a
+    }) 
     this.servprodutos.getProdutos().subscribe({
       next: (produtos : Produto[]) => {             
         this.listaProdutos=produtos;
+        this.listaProdutos = this.listaProdutos.filter( i => this.wishlist.includes( i.id ) );
+        console.log(this.listaProdutos);
         // console.log(this.listaProdutos);            
       }
     });
-
-    this.wishlistService.getWishlist().subscribe(productIds=>{
-      // console.log(productIds)
-     this.wishlist= productIds 
-   
-    this.listaProdutos = this.listaProdutos.filter( i => this.wishlist.includes( i.id ) );
-    console.log(this.listaProdutos );
-   }) 
   }
 
 
   removeProdutoWishlist(id:number){
-    this.wishlistService.removeFromWhishlist(id)
-    this.leProdutos();
+    console.log(`id a remover ${id}`)
+    this.wishlistService.removeFromWhishlist(id).subscribe();
+    //this.leProdutos();
 }
 
 

@@ -7,7 +7,7 @@ export type Produto = {
     preco: string,
     descricao: string,
     foto_principal: string,
-    foto_secundária: string,
+    foto_secundaria: string,
     destaque: boolean
     
 }

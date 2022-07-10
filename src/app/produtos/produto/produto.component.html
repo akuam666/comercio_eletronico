@@ -1,7 +1,18 @@
- <div *ngIf="produto"> 
-    <h2>{{produto.nome | uppercase}} Details</h2>
-    <div><span>id: </span>{{produto.id}}</div>
-<!--     
-    <button type="button" (click)="goBack()">go back</button>
-    <button type="button" (click)="save()">save</button> -->
-  </div> 
+ <div class="container">
+   <div *ngIf="produto"> 
+      <div class="card text-center mx-auto">
+        <div class="card-body">
+          <h1 class="card-title">{{produto.marca}}</h1>
+          <h2 class="card-subtitle mb-2 text-muted">{{produto.nome}}</h2>
+          <div>
+            <img src={{produto.foto_principal}} style="height: 200px; width: 130px;">
+            <img src={{produto.foto_secundaria}} style="height: 200px; width: 130px;">
+          </div>
+          <p> {{produto.tipo_de_produto}} {{produto.cor}}</p>
+          <p >{{produto.preco}}€</p>
+          <p >{{produto.descricao}}</p>     
+        </div>
+      </div>
+      </div> 
+ </div>
+

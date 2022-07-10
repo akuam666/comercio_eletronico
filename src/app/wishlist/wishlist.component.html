@@ -1,23 +1,20 @@
 
-
+<h1>Wishlist</h1>
  <div class="row" *ngFor="let produto of listaProdutos">
-    <div class="col-6 col-md-2">
-                       
+    <div class="col-6 col-sm-2" style="text-align: center;">                      
         <img src="{{produto.foto_principal}}"               
         alt="{{produto.nome}}" class="img-responsive" style="max-width: 100px;">
      </div>
-    <div class="col-6 col-md-4">                 
-                            <h4 class ="list-group-item-heading">{{produto.nome}}</h4>
-                            <p class="list-group-item-text">{{produto.descricao}}</p>
-                            </div>
-                            <div class="col-6 col-md-1">
-                                <button class="btn btn-danger" (click)="removeProdutoWishlist(produto.id!)">Delete</button>
-                            </div>
-
-                       
-                       
-                
-            </div>
+    <div class="col-6 col-sm-2" style="text-align: center;">                 
+         <h3 class ="list-group-item-heading">{{produto.marca}}</h3>
+          <p class="list-group-item-text">{{produto.nome}}</p>
+          <p class="list-group-item-text">{{produto.preco}}€</p>
+    </div>
+    <div class="col-6 col-sm-2" style="text-align: center;">
+        <!-- <button class="btn btn-danger" (click)="removeProdutoWishlist(produto.id!)">Remover</button> -->
+        <input  type="button" class="btn btn-dark" (click)="removeProdutoWishlist(produto.id!)" value="Remover">
+     </div>          
+    </div>
        
                  
     

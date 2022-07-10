@@ -37,7 +37,7 @@ export class FilterComponent implements OnInit {
 
       this.tipo=event.target.value;
    
-     }else if(event.target.checked && event.target.value==="Preto" ||event.target.checked && event.target.value===""){
+     }else if(event.target.checked && event.target.value==="Preto" ||event.target.checked && event.target.value==="" ||event.target.checked && event.target.value==="Cinzento" ||event.target.checked && event.target.value==="Azul" ||event.target.checked && event.target.value==="Laranja"){
 
       this.cor=event.target.value
        

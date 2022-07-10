@@ -1,10 +1,12 @@
 h1{
     text-align: center;
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 fa-icon{
-    /* color: red; */
-     /* background-color: black; */
+    
      cursor: pointer;
     
 }
@@ -12,3 +14,11 @@ fa-icon{
 img{
     cursor: pointer;
 }
+
+@media only screen and (min-width: 100px) and (max-width: 1000px){
+
+    .col-lg-2{
+      text-align: -webkit-center;
+    }
+  }
+

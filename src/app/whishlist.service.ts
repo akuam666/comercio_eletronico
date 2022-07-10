@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 import { delay, filter, map } from 'rxjs/operators';
 
 import { Produto } from './produtos/produto.model';
+import { StoreService } from './store.service';
+import { User } from './user.model';
 import { Wishlist } from './wishlist.model';
 
 @Injectable({
@@ -20,13 +22,13 @@ export class WhishlistService {
   isRemove = 0
   
  
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private storeService: StoreService) { }
 
-
+loggedUser : User = this.storeService.getUser();
  
 
   getWishlist(){
-    return this.http.get<any>(`${this.ola}?signupsersId=3`).pipe(
+    return this.http.get<any>(`${this.ola}?signupsersId=${this.loggedUser.id}`).pipe(
       map((result:any[]) => {
         let produtosIds:any[] = []
         result.forEach(item => produtosIds.push(item.produtosId))
@@ -37,7 +39,7 @@ export class WhishlistService {
   }
 
   addToWhishlist(produtoId : number){
-    return this.http.post<Produto>(this.ola, {produtosId: produtoId, signupsersId:3});
+    return this.http.post<Produto>(this.ola, {produtosId: produtoId, signupsersId: this.loggedUser.id});
   }
 
   getIdRemove(id:number){
@@ -52,34 +54,16 @@ export class WhishlistService {
             
           }
         })
-      })
-      // console.log(`dfsdfdsfsd ${produtosIds}`)
-      // return produtosIds
-      
+      }) 
     )
   }
 
 
 
     removeFromWhishlist(id : number){
-     return this.http.delete<Produto>(`${this.ola}/${id}`)
-    // this.http.get<any>(`${this.ola}?signupsersId=3`).pipe(
-    //   map((result:any[]) => {
-    //     result.forEach(item => {
-    //       if(item.produtosId == id) return item.id;}
-    //   )})
-    // )
-    // console.log(ida);
-    // console.log("getIDRemove", this.getIdRemove(id))
-     this.getIdRemove(id)
-    // .subscribe(
-    //   (idElement) => {
-    //     this.isRemove = idElement!
-    //   }
-    // )
-   
-
-      //  this.http.delete<any>(`${this.ola}/${this.isRemove}`);
+      console.log(`id a remover ${id}`)
+     return this.http.delete<Wishlist>(`${this.ola}?produtosId=${id}&signupsersId=${this.loggedUser.id}`)
+  
   }
 
 

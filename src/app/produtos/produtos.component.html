@@ -4,14 +4,22 @@
 
 
 <h1>Homem</h1>
-  <div class="row row-cols-1 row-cols-md-3 g-4" >
-    <app-filter (valorTipo)="filtraLista($event)"  ></app-filter>
-    
-    <div class="col"  *ngFor="let produto of listaProdutos">
-      <app-product-item [produto]="produto" [addedToWishlist]="wishlist.indexOf(produto.id!) >=0"></app-product-item>
-      
-        
 
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2">
+      <app-filter (valorTipo)="filtraLista($event)"></app-filter>
+    </div>
+    <div class="col-md-10">
+      Total de produtos: {{ listaProdutos.length }}
+       <div class="row row-cols-1 row-cols-sm-3 g-4" >         
+          <div class="col"  *ngFor="let produto of listaProdutos">
+            <app-product-item [produto]="produto" [addedToWishlist]="wishlist.indexOf(produto.id!) >=0 "></app-product-item>
+          </div>
+        </div>
     </div>
   </div>
+</div> 
+
 

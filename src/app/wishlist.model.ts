@@ -1,6 +1,8 @@
 export type Wishlist={
 
-    id?: number[]
+    id?: number;
+    produtosid : number;
+    signupsersId: number;
    
 
 }

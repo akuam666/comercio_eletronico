@@ -1,4 +1,4 @@
-h1{
+#saldos{
     position:absolute;
      top:40%; 
       text-align:center;  
@@ -14,3 +14,20 @@ h1{
 .container{
     position: relative;
 }
+.card{
+    margin:15px;
+    cursor: pointer;
+}
+
+#fotos:hover{
+    border: 2px solid red;
+}
+
+#destaques{
+    text-align: center;
+    font-size: 75px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+

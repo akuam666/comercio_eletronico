@@ -31,11 +31,11 @@ export class UserpageComponent implements OnInit {
 
 
     this.signupForm = new FormGroup({
-      nome: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z -]{3,40}')]),
-      email:new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z -]{3,40}')]),
-      password: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]{3,40}')]),
-      morada:new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z -]{3,40}')]),
-      codigo_postal:new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z -]{3,40}')]),
+      nome: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]{3,40}')]),
+      email:new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
+      password: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9]{5,40}')]),
+      morada:new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9 -]{10,100}')]),
+      codigo_postal:new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9 -]{3,40}')]),
       pais:new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z -]{3,40}')]),
     });
 

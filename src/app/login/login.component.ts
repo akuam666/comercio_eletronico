@@ -12,8 +12,8 @@ import { User } from '../user.model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private _isLoggedIn = new BehaviorSubject<boolean> (false);
-  isLoggedIn = this._isLoggedIn.asObservable();
+  // private _isLoggedIn = new BehaviorSubject<boolean> (false);
+  // isLoggedIn = this._isLoggedIn.asObservable();
 
   public loginForm! : FormGroup;
 
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email:['', Validators.required],
+      email:['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password:['', Validators.required]
     })
   }
@@ -34,17 +34,18 @@ export class LoginComponent implements OnInit {
       });
       if(user){
 
-        alert("login Success");
-        // console.log(user.nome)
-        // localStorage.setItem('user loged', user.nome)
+        alert("Login efetuado com sucesso!");
+     
         this.storeService.setUser(user);
-        // let userLogado = this.storeService.getUser();
-        // console.log(userLogado);
+        this.storeService.setisLoggedIn();
+      
         this.loginForm.reset();
         this.router.navigate([''])
-      }else{
-        alert("user not found");
+      }else {
+        alert("Utilizador nao encontrado");
+
       }
+     
     }
       
     )

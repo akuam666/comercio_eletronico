@@ -1,14 +1,40 @@
 h1{
     text-align: center;
+    font-size: 40px;
 }
 
-fa-icon{
-    /* color: red; */
-     /* background-color: black; */
-     cursor: pointer;
-    
-}
+
 
 img{
     cursor: pointer;
+    
 }
+
+#fotosecundaria{
+    display:none
+}
+
+
+.wrapper {
+    width: auto;
+    display: inline-block;
+    
+  }
+
+  .wrapper:hover #fotoprincipal {
+    display: none;
+  }
+  
+  .wrapper:hover #fotosecundaria {
+    display: block;
+  }
+
+
+  fa-icon{
+    text-align: right;
+    padding-top:10px;
+    padding-right:10px;
+    cursor: pointer;
+  } 
+  
+

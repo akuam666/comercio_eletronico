@@ -35,40 +35,36 @@ export class ServprodutosService {
     return this.http.get<Produto[]>(this.urlAPI);
   }
 
+
+  getDestaques(){
+    return this.http.get<Produto[]>(`${this.urlAPI}/?destaque_like=true`);
+  }
+
+  getTipos(){
+    return this.http.get<any>("http://localhost:3000/tipos")
+
+  }
+
  
 
   getProduto(id: number): Observable<Produto> {
     
     const url = `${this.urlAPI}/${id}`;
 
-    return this.http.get<Produto>(url).pipe(
-      tap(_ =>this.log(`fetched hero id=${id}`)),
-      catchError(this.handleError<Produto>(`getProduto id=${id}`))
-    );
-  }
-
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-
-      // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
-
-      // Let the app keep running by returning an empty result.
-      return of (result as T);
-    };
-  }
-
-
-  private log(message: string) {
-     this.messageService.add(`HeroService: ${message}`);
-   }
+    return this.http.get<Produto>(url)
    
+  }
+
+
+
+  
 
   filtraProduto(filtroTipo: string, filtroCor :string) {
     return this.http.get<Produto[]>(`${this.urlAPI}?tipo_de_produto_like=${filtroTipo}&cor_like=${filtroCor}`);
+  }
+
+  filtraRoupa(pesquisa : string){
+    return this.http.get<Produto[]>(`${this.urlAPI}?q=${pesquisa}`);
   }
 
 

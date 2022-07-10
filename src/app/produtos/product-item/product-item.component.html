@@ -1,11 +1,18 @@
 
+            
+            
             <div class="card text-center">
-                <img [src]="produto.foto_principal" routerLink="/produtos/{{produto.id}}" class="card-img-top" alt="...">
+              
+              <fa-icon *ngIf="addedToWishlist" [icon]="['fas', 'star']" style = "color:red;" (click)="removeProdutoWishlist(produto.id!)"></fa-icon>
+              <fa-icon *ngIf="!addedToWishlist" [icon]="['far', 'star']" (click)="addProdutoWhishlist(produto.id!)"></fa-icon>                    
+              <div class="wrapper">
+                <img id="fotoprincipal" [src]="produto.foto_principal" routerLink="/produtos/{{produto.id}}" class="card-img-top" alt="...">
+                <img id="fotosecundaria" [src]="produto.foto_secundaria" routerLink="/produtos/{{produto.id}}" class="card-img-top" alt="...">
+              </div>
                 <div class="card-body" >
-                  <h5 class="card-title">{{produto.nome}}
-                    <fa-icon *ngIf="addedToWishlist" [icon]="['fas', 'star']" style = "color:red;" (click)="removeProdutoWishlist(produto.id!)"></fa-icon>
-                    <fa-icon *ngIf="!addedToWishlist" [icon]="['far', 'star']" (click)="addProdutoWhishlist(produto.id!)"></fa-icon>                    
-                  </h5>
-                  <p class="card-text">{{produto.marca}} {{addedToWishlist}}</p>
+                  <h2 class="card-title">{{produto.marca}}
+                  </h2>
+                  <p class="card-text">{{produto.nome}} </p>
+                  <p class="card-text">{{produto.preco}}€  </p>
                 </div>
               </div> 

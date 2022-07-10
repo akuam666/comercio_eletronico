@@ -12,6 +12,8 @@ export class StoreService {
 
    dadosUser! : User;
 
+   isLoggedIn = false;
+
   constructor(private http: HttpClient) { 
   }
 
@@ -22,6 +24,20 @@ export class StoreService {
   setUser(dadosUser:User){
     this.dadosUser = dadosUser;
    
+  }
+
+  setisLoggedIn(){
+    this.isLoggedIn=true;
+
+  }
+
+  setisNotLoggedIn(){
+    this.isLoggedIn=false;
+
+  }
+  
+  isAuthenticated(){
+    return this.isLoggedIn;
   }
 
   editUser(id: number, infoUser : User) {

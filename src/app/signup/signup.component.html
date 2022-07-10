@@ -4,50 +4,48 @@
             <div class="card">
                 <div class="text-center">
                     <h1>Olá</h1>
-                    <h6>Register Yourself !</h6>
+                    <h2>Por favor faça o resgisto !</h2>
                 </div>
                 <form [formGroup]="signupForm" (ngSubmit)="signUp()">
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Nome</label>
-                        <input  formControlName="nome" type="text" class="form-control" id="exampleInputPassword1">
-                        <small *ngIf="signupForm.get('nome')!.touched && signupForm.get('nome')!.invalid">
-                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                        <label for="nome" class="form-label">Nome:</label>
+                        <input  formControlName="nome" type="text" class="form-control" id="nome">
+                        <small *ngIf="signupForm.get('nome')!.touched && signupForm.get('nome')!.invalid">Campo de preenchimento obrigatório. Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
                       </small>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email</label>
-                        <input formControlName="email"  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        <small *ngIf="signupForm.get('email')!.touched && signupForm.get('email')!.invalid">
-                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                        <label for="email" class="form-label">Email:</label>
+                        <input formControlName="email"  type="email" class="form-control" id="email">
+                       
+                        <small *ngIf="signupForm.get('email')!.touched && signupForm.get('email')!.invalid">Campo de preenchimento obrigatório.(Formato: AAAA@BBBB.CCC)
                       </small>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input formControlName="password"  type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="password" class="form-label">Password:</label>
+                        <input formControlName="password"  type="password" class="form-control" id="password">
                         <small *ngIf="signupForm.get('password')!.touched && signupForm.get('password')!.invalid">
-                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                          Campo de preenchimento obrigatório. Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
                       </small>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Morada</label>
-                        <input formControlName="morada" type="text" class="form-control" id="exampleInputPassword1">
+                        <label for="morada" class="form-label">Morada:</label>
+                        <input formControlName="morada" type="text" class="form-control" id="morada">
                         <small *ngIf="signupForm.get('morada')!.touched && signupForm.get('morada')!.invalid">
-                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                          Campo de preenchimento obrigatório. Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
                       </small>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Código Postal</label>
-                        <input formControlName="codigo_postal"  type="text" class="form-control" id="exampleInputPassword1">
+                        <label for="codigo_postal" class="form-label">Código Postal:</label>
+                        <input formControlName="codigo_postal"  type="text" class="form-control" id="codigo_postal">
                         <small *ngIf="signupForm.get('codigo_postal')!.touched && signupForm.get('codigo_postal')!.invalid">
-                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                          Campo de preenchimento obrigatório. Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
                       </small>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">País</label>
-                        <input formControlName="pais" type="text" class="form-control" id="exampleInputPassword1">
+                        <label for="pais" class="form-label">País:</label>
+                        <input formControlName="pais" type="text" class="form-control" id="pais">
                         <small *ngIf="signupForm.get('pais')!.touched && signupForm.get('pais')!.invalid">
-                          Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
+                          Campo de preenchimento obrigatório. Só pode utilizar letras e espaços e no mínimo 3 caracteres (máx. 40 caracteres).
                       </small>
                       </div>
                  
